@@ -17,6 +17,14 @@ const onGetSurveys = (event) => {
     .catch(ui.failure)
 }
 
+const onViewSurvey = (event) => {
+  event.preventDefault()
+  const id = $(event.target).closest('section').data('id')
+  api.viewSurvey(id)
+    .then(ui.viewSurveySuccess)
+    .catch(ui.failure)
+}
+
 const addSurveyHandlers = () => {
   $('#survey-form').on('submit', onCreateSurvey)
   $('#new-survey-btn').on('click', onGetSurveys)
@@ -24,5 +32,6 @@ const addSurveyHandlers = () => {
 
 module.exports = {
   addSurveyHandlers,
-  onGetSurveys
+  onGetSurveys,
+  onViewSurvey
 }
