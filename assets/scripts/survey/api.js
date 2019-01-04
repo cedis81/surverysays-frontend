@@ -13,6 +13,18 @@ const createSurvey = (inputData) => {
   })
 }
 
+const getSurveys = () => {
+  return $.ajax({
+    url: config.apiUrl + '/surveys',
+    method: 'GET',
+    headers: {
+      Authorization: `Token token=${store.user.token}`
+    },
+    contentType: 'application/json'
+  })
+}
+
 module.exports = {
-  createSurvey
+  createSurvey,
+  getSurveys
 }

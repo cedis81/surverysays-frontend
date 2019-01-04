@@ -10,10 +10,19 @@ const onCreateSurvey = (event) => {
     .catch(ui.failure)
 }
 
+const onGetSurveys = (event) => {
+  event.preventDefault()
+  api.getSurveys()
+    .then(ui.getSurveysSuccess)
+    .catch(ui.failure)
+}
+
 const addSurveyHandlers = () => {
   $('#survey-form').on('submit', onCreateSurvey)
+  $('#new-survey-btn').on('click', onGetSurveys)
 }
 
 module.exports = {
-  addSurveyHandlers
+  addSurveyHandlers,
+  onGetSurveys
 }
