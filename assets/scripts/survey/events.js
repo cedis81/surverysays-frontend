@@ -1,14 +1,13 @@
 const getFormFields = require('../../../lib/get-form-fields')
 const api = require('./api')
+const ui = require('./ui')
 
 const onCreateSurvey = (event) => {
   event.preventDefault()
   const userData = getFormFields(event.target)
-  console.log('the event is created')
-  console.log(userData)
   api.createSurvey(userData)
-    .then(console.log)
-    .catch(console.log)
+    .then(ui.createSurveySuccess)
+    .catch(ui.failure)
 }
 
 const addSurveyHandlers = () => {
