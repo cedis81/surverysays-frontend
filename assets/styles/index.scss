@@ -1,1 +1,77 @@
 @import '~bootstrap/scss/bootstrap';
+
+$background: #922b21;
+$red: #a60202;
+$green: #00a402;
+$white: #FFF;
+$grey: #cdcdcd;
+$black: #000;
+
+.error-message {
+  color: $black;
+}
+
+.success-message {
+  color: $black;
+}
+.hidden {
+  display: none;
+}
+
+#sign-out-btn {
+  display: none;
+  margin: 0 auto;
+}
+
+#change-pass-btn {
+  display: none;
+  margin: 0 auto;
+}
+.navbar {
+  background-color: rgba(255, 255, 255, 0.4);
+  background-blend-mode: lighten;
+  font-size: 30px;
+}
+
+.forms {
+  background-color: rgba(255, 255, 255, 0.4);
+  background-blend-mode: lighten;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+  flex-direction: column;
+  // margin-bottom: 20px;
+  #sign-up-form {
+    display: none;
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+    #sign-in-form {
+      display: none;
+      margin: 0 auto;
+      margin-bottom: 20px;
+    }
+    #change-password-form {
+        display: none;
+        margin: 0 auto;
+        margin-bottom: 20px;
+    }
+}
+
+.messagegrid {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  font-size: 30px;
+  justify-content: space-around;
+  flex-direction: column;
+  margin-top: 20px;
+  height: 60px;
+  #message{
+    margin: 10px 10px;
+  }
+  #message-box {
+    margin: 10px 10px;
+  }
+}

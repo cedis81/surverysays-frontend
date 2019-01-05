@@ -1,0 +1,26 @@
+{{#each this as |mysurvey|}}
+{{#mysurvey}}
+<div class="my-survey" data-id="{{_id}}">
+  <div class="survey-title" data-id="{{_id}}">
+    <h5>
+      Title: <div class="each-survey-title-{{_id}}">{{title}}</div>
+    </h5>
+  </div>
+<!-- view -->
+<div class="survey-question" data-id="{{_id}}">
+  <h5>
+    Question: <div class="each-survey-question{{_id}}">{{question}}</div>
+  </h5>
+</div>
+<div class="update-{{_id}}" data-id="{{_id}}">
+  <form class="update-survey-form" data-id="{{_id}}" data-owner="{{owner}}">
+    <input class="title-update-{{_id}}" type="text" placeholder="Update Title" data-id="{{_id}}">
+    <input class="question-update-{{_id}}" type="text" placeholder="Update Question" data-id="{{_id}}">
+    <button class="submit-btn submit-btn-{{_id}}" type="submit" value="submit" data-id="{{_id}}">Submit Update</button>
+  </form>
+</div>
+  <button class="btn btn-default delete-survey" data-id="{{_id}}">Remove Survey</button>
+  <button class="btn btn-default update-survey" data-id="{{_id}}">Update Survey</button>
+</div>
+{{/mysurvey}}
+{{/each}}

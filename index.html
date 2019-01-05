@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Survey Says?</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -12,6 +12,80 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Browser Template</h1>
-    </body>
+      <nav class="navbar">
+          <span class="navbar-brand mb-0 h1">Survey Says!</span>
+          <form class='form-inline'>
+            <button type="button" id ="sign-up-btn" class="btn btn-secondary">Sign Up</button>
+            <button type="button" id ="sign-in-btn" class="btn btn-secondary">Sign In</button>
+            <button type="button" id ="sign-out-btn" class="btn btn-secondary">Sign Out</button>
+            <button type="button" id ="change-pass-btn" class="btn btn-secondary">Change Password</button>
+          </form>
+      </nav>
+
+      <div class="forms" id="forms">
+
+        <form id="sign-up-form">
+          <legend>Sign-Up Form</legend>
+          <input name="credentials[email]" type="email" placeholder="email">
+          <input name="credentials[password]" type="password" placeholder="password">
+          <input name="credentials[password_confirmation]" type="password" placeholder="password confirmation">
+          <input type="submit">
+        </form>
+
+        <form id="sign-in-form">
+          <legend>Sign-In Form</legend>
+          <input name="credentials[email]" type="email" placeholder="email">
+          <input name="credentials[password]" type="password" placeholder="password">
+          <input type="submit">
+        </form>
+
+        <form id="change-password-form" class="hidden">
+          <legend>Change Password Form</legend>
+          <input name="passwords[old]" type="password" placeholder="old password">
+          <input name="passwords[new]" type="password" placeholder="new password">
+          <input type="submit">
+        </form>
+
+      </div>
+      <div class='messagegrid'>
+           <div id="message"></div>
+           <div id='message-box'></div>
+      </div>
+
+      <div class="survey-box hidden">
+
+        <div class="button-grp">
+          <button class="survey-btns" id="create-survey-btn" type="button">Create Your Survey</button>
+          <button class="survey-btns" id="get-survey-btn" type="button">View All Surveys</button>
+        </div>
+
+        <div class="get-all-surveys hidden">
+        </div>
+
+      <form id="survey-form" class="hidden">
+        <div class="surveyform hidden" id="survey-title-form">
+          <legend> Title </legend>
+          <input class="title-submit" name="survey[title]" type="text" placeholder="survey title">
+        </div>
+
+        <div class="surveyform hidden" id="survey-question-form">
+          <legend> Question </legend>
+          <textarea class="question-submit" name="survey[question]" type="text" placeholder="survey question"></textarea>
+        </div>
+
+        <!-- <div class="surveyforms hidden" id="survey-answers-form">
+          <legend> Answers</legend>
+          <select id="survey-type">
+            <option value="">Answers</option>
+            <option value="Agree" name="survey[answer]">Agree</option>
+            <option value="Disagree" name="survey[answer]">Disagree</option>
+          </select>
+        </div> -->
+
+        <div class="surveyform hidden">
+          <button id="submit-button" type="submit" value="submit">Create Survey</button>
+        </div>
+      </form>
+    </div>
+  </body>
 </html>
