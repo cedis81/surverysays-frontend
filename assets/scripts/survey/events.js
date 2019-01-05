@@ -38,7 +38,7 @@ const onUpdateSurvey = (event) => {
 
 const onDeleteSurvey = (event) => {
   event.preventDefault()
-  const id = $(event.target).closest('section').data('id')
+  const id = $(event.currentTarget).data('id')
   api.deleteSurvey(id)
     .then(() => onGetSurveys(event))
     .catch(ui.failure)
@@ -46,8 +46,15 @@ const onDeleteSurvey = (event) => {
 
 const addSurveyHandlers = () => {
   $('#survey-form').on('submit', onCreateSurvey)
-  $('#new-survey-btn').on('click', onGetSurveys)
+  $('#get-survey-btn').on('click', onGetSurveys)
+  $('#create-survey-btn').click(() => {
+    $('#survey-form').show()
+  })
+  $('#submit-button').click(() => {
+    $('#survey-form').hide()
+  })
   $('.survey-box').on('submit', '.update-survey-form', onUpdateSurvey)
+  $('.survey-box').on('click', '.delete-survey', onDeleteSurvey)
 }
 
 module.exports = {
