@@ -15,11 +15,16 @@ const getSurveysSuccess = (survey) => {
   const showAllMySurveys = showMySurveys({ surveys: survey.surveys })
   $('.survey-box').html(showAllMySurveys)
   console.log(survey)
+  $('.survey-box').removeClass('hidden')
   // }
 }
 
 const zeroSurveys = () => {
   console.log('zero surveys')
+}
+
+const updateSurveySuccess = () => {
+  console.log('survey update success')
 }
 
 const failure = (failureResponse) => {
