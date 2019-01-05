@@ -25,6 +25,14 @@ const onViewSurvey = (event) => {
     .catch(ui.failure)
 }
 
+const onUpdateSurvey = (event) => {
+
+}
+
+const onDeleteSurvey = (event) => {
+
+}
+
 const addSurveyHandlers = () => {
   $('#survey-form').on('submit', onCreateSurvey)
   $('#new-survey-btn').on('click', onGetSurveys)

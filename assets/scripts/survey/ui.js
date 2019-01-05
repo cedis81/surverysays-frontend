@@ -12,9 +12,9 @@ const getSurveysSuccess = (survey) => {
   // if (survey.surveys.length === 0) {
   //   zeroSurveys()
   // } else {
-    const showAllMySurveys = showMySurveys({ surveys: survey.surveys })
-    console.log('hello', showAllMySurveys)
-    console.log(survey)
+  const showAllMySurveys = showMySurveys({ surveys: survey.surveys })
+  $('.survey-box').html(showAllMySurveys)
+  console.log(survey)
   // }
 }
 
