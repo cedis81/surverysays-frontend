@@ -69,6 +69,7 @@ const onSignOutSuccess = (signOutResponse) => {
   $('#sign-in-btn').show()
   $('#bottom-btn').hide()
   $('.survey-box').hide()
+  $('.get-all-surveys').empty()
   $('.surveyform').empty()
   $('.surveyform').hide()
   $('#change-password-form').trigger('reset')

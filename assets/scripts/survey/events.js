@@ -48,6 +48,14 @@ const addSurveyHandlers = () => {
   $('#survey-form').on('submit', onCreateSurvey)
   $('#get-survey-btn').on('click', onGetSurveys)
   $('#create-survey-btn').click(() => {
+    $('.get-all-surveys').hide()
+    $('#survey-form').show()
+  })
+  $('#get-survey-btn').click(() => {
+    $('#survey-form').hide()
+    $('.get-all-surveys').show()
+  })
+  $('#create-survey-btn').click(() => {
     $('#survey-form').show()
   })
   $('#submit-button').click(() => {
