@@ -1,6 +1,5 @@
 const config = require('../config.js')
 const store = require('../store.js')
-
 const createSurvey = (inputData) => {
   return $.ajax({
     url: config.apiUrl + '/surveys',
@@ -34,7 +33,8 @@ const viewSurvey = (surveyId) => {
   })
 }
 
-const updateSurvey = (id, surveyData) => {
+const updateSurvey = (id, title, question, owner) => {
+  console.log('store', store)
   return $.ajax({
     url: config.apiUrl + `/surveys/${id}`,
     method: 'PATCH',
@@ -42,7 +42,13 @@ const updateSurvey = (id, surveyData) => {
       Authorization: `Token token=${store.user.token}`
     },
     contentType: 'application/json',
-    data: JSON.stringify(surveyData)
+    data: JSON.stringify({
+      'survey': {
+        'owner': owner,
+        'title': title,
+        'question': question
+      }
+    })
   })
 }
 

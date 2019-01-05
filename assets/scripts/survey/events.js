@@ -27,12 +27,11 @@ const onViewSurvey = (event) => {
 
 const onUpdateSurvey = (event) => {
   event.preventDefault()
-  const id = $(event.target).parents('div').data('id')
-  console.log('id', id)
-  console.log('event', event.target)
-  const surveyData = getFormFields(event.target)
-  console.log('survey', surveyData)
-  api.updateSurvey(id, surveyData)
+  const id = $(event.currentTarget).data('id')
+  const owner = $(event.currentTarget).data('owner')
+  const title = $('.title-update-' + event.target.attributes['data-id'].value).val()
+  const question = $('.question-update-' + event.target.attributes['data-id'].value).val()
+  api.updateSurvey(id, title, question, owner)
     .then(ui.updateSurveySuccess)
     .catch(ui.failure)
 }
