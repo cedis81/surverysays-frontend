@@ -25,11 +25,12 @@ const getSurveys = () => {
 
 const viewSurvey = (surveyId) => {
   return $.ajax({
-    url: config.apiUrl + `/surveys/${surveyId}`,
+    url: config.apiUrl + `/surveys`,
     method: 'GET',
     headers: {
       Authorization: `Token token=${store.user.token}`
-    }
+    },
+    contentType: 'application/json'
   })
 }
 

@@ -17,13 +17,12 @@ const onGetSurveys = (event) => {
     .catch(ui.failure)
 }
 
-// const onViewSurvey = (event) => {
-//   event.preventDefault()
-//   const id = $(event.currentTarget).data('id')
-//   api.viewSurvey(id)
-//     .then(ui.viewSurveySuccess)
-//     .catch(ui.failure)
-// }
+const onViewSurvey = (event) => {
+  event.preventDefault()
+  api.viewSurvey()
+    .then(ui.viewSurveySuccess)
+    .catch(ui.failure)
+}
 
 const onUpdateSurvey = (event) => {
   event.preventDefault()
@@ -48,16 +47,25 @@ const onDeleteSurvey = (event) => {
 const addSurveyHandlers = () => {
   $('#survey-form').on('submit', onCreateSurvey)
   $('#get-survey-btn').on('click', onGetSurveys)
+  $('#my-survey-btn').on('click', onViewSurvey)
   $('#create-survey-btn').click(() => {
     $('.get-all-surveys').hide()
     $('#survey-form').show()
   })
   $('#get-survey-btn').click(() => {
     $('#survey-form').hide()
+    $('.get-my-surveys').hide()
     $('.get-all-surveys').show()
   })
   $('#create-survey-btn').click(() => {
     $('#survey-form').show()
+    $('.get-my-surveys').hide()
+    $('.get-all-surveys').hide()
+  })
+  $('#my-survey-btn').click(() => {
+    $('#survey-form').hide()
+    $('.get-all-surveys').hide()
+    $('.get-my-surveys').show()
   })
   $('#submit-button').click(() => {
     $('#survey-form').hide()
@@ -69,7 +77,7 @@ const addSurveyHandlers = () => {
 module.exports = {
   addSurveyHandlers,
   onGetSurveys,
-  // onViewSurvey,
+  onViewSurvey,
   onUpdateSurvey,
   onDeleteSurvey
 }
