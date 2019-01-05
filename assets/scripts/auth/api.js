@@ -3,44 +3,43 @@
 const config = require('../config')
 const store = require('../store')
 
-const signUp = function (data) {
+const signUp = (inputData) => {
   return $.ajax({
+    method: 'POST',
     url: config.apiUrl + '/sign-up',
-    method: 'POST',
-    data
-    // data: data
+    contentType: 'application/json',
+    data: JSON.stringify(inputData)
   })
 }
 
-const signIn = function (data) {
+const signIn = (inputData) => {
   return $.ajax({
+    method: 'POST',
     url: config.apiUrl + '/sign-in',
-    method: 'POST',
-    data
-    // data: data
+    contentType: 'application/json',
+    data: JSON.stringify(inputData)
   })
 }
-
-const signOut = function () {
+//
+const changePassword = (inputData) => {
   return $.ajax({
-    url: config.apiUrl + '/sign-out',
-    method: 'DELETE',
-    headers: {
-      Authorization: 'Token token=' + store.user.token
-    }
-  })
-}
-
-const changePassword = function (data) {
-  console.log('data is ', data)
-  return $.ajax({
-    url: config.apiUrl + '/change-password',
     method: 'PATCH',
+    url: config.apiUrl + '/change-password',
     headers: {
-      Authorization: 'Token token=' + store.user.token
+      Authorization: `Token token=${store.user.token}`
     },
-    data
-    // data: data
+    contentType: 'application/json',
+    data: JSON.stringify(inputData)
+  })
+}
+
+const signOut = (inputData) => {
+  return $.ajax({
+    method: 'DELETE',
+    url: config.apiUrl + '/sign-out',
+    headers: {
+      Authorization: `Token token=${store.user.token}`
+    }
   })
 }
 
