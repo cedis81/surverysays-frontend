@@ -4,27 +4,26 @@ const showMySurveys = require('../templates/mysurvey.handlebars')
 
 const createSurveySuccess = (createSurveyResponse) => {
   $('#survey-form').trigger('reset')
-  console.log('create survey success')
+  $('#message').html('Survey successfully created.')
 }
 
 const getSurveysSuccess = (survey) => {
   store.survey = survey
-  // if (survey.surveys.length === 0) {
-  //   zeroSurveys()
-  // } else {
-  const showAllMySurveys = showMySurveys({ surveys: survey.surveys })
-  $('.get-all-surveys').html(showAllMySurveys)
-  console.log('HI', survey)
-  $('.get-all-surveys').removeClass('hidden')
-  // }
+  if (survey.surveys.length === 0) {
+    zeroSurveys()
+  } else {
+    const showAllSurveys = showMySurveys({ surveys: survey.surveys })
+    $('.get-all-surveys').html(showAllSurveys)
+    $('.get-all-surveys').removeClass('hidden')
+  }
 }
 
 const zeroSurveys = () => {
-  console.log('zero surveys')
+  $('.get-all-surveys').html('There are currently no surveys created. Please create one to get started.')
 }
 
 const updateSurveySuccess = () => {
-  console.log('survey update success')
+  $('#message').html('Survey successfully updated.')
 }
 
 const failure = (failureResponse) => {
@@ -34,5 +33,6 @@ const failure = (failureResponse) => {
 module.exports = {
   createSurveySuccess,
   getSurveysSuccess,
+  updateSurveySuccess,
   failure
 }
