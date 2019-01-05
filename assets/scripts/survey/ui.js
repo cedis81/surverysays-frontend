@@ -12,12 +12,17 @@ const getSurveysSuccess = (survey) => {
   if (survey.surveys.length === 0) {
     zeroSurveys()
   } else {
-    const showAllSurveys = showMySurveys({ surveys: survey.surveys })
-    $('.get-all-surveys').html(showAllSurveys)
+    const allSurveys = showAllSurveys({ surveys: survey.surveys })
+    $('.get-all-surveys').html(allSurveys)
     $('.get-all-surveys').removeClass('hidden')
   }
 }
-
+const viewSurveySuccess = (survey) => {
+  store.survey = survey
+  const mySurveys = showMySurveys({ surveys: survey.surveys })
+  $('.get-my-surveys').html(mySurveys)
+  $('.get-my-surveys').removeClass('hidden')
+}
 const zeroSurveys = () => {
   $('.get-all-surveys').html('There are currently no surveys created. Please create one to get started.')
 }
@@ -34,5 +39,6 @@ module.exports = {
   createSurveySuccess,
   getSurveysSuccess,
   updateSurveySuccess,
+  viewSurveySuccess,
   failure
 }
