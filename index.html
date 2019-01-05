@@ -47,7 +47,10 @@
         </form>
 
       </div>
-
+      <div class='messagegrid'>
+           <div id="message"></div>
+           <div id='message-box'></div>
+         </div>
       <div class="survey-box hidden">
 
         <div class="button-grp">
@@ -69,14 +72,14 @@
           <textarea class="question-submit" name="survey[question]" type="text" placeholder="survey question"></textarea>
         </div>
 
-        <div class="surveyforms hidden" id="survey-answers-form">
+        <!-- <div class="surveyforms hidden" id="survey-answers-form">
           <legend> Answers</legend>
           <select id="survey-type">
             <option value="">Answers</option>
             <option value="Agree" name="survey[answer]">Agree</option>
             <option value="Disagree" name="survey[answer]">Disagree</option>
           </select>
-        </div>
+        </div> -->
 
         <div class="surveyform hidden">
           <button id="submit-button" type="submit" value="submit">Create Survey</button>
