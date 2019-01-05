@@ -18,11 +18,11 @@ const failure = (failureResponse) => {
   $('#message').addClass('error-message')
 }
 
-const signUpFailure = (failureResponse) => {
-  $('#message').html('Sign up failed! Check your password! Minimum 6 characters')
-  $('#message').removeClass('success-message')
-  $('#message').addClass('error-message')
-}
+// const signUpFailure = (failureResponse) => {
+//   $('#message').html('Sign up failed! Check your password! Minimum 6 characters')
+//   $('#message').removeClass('success-message')
+//   $('#message').addClass('error-message')
+// }
 
 const signInSuccess = (signInResponse) => {
   store.user = signInResponse.user
@@ -40,17 +40,16 @@ const signInSuccess = (signInResponse) => {
   $('#change-pass-btn').show()
   $('#sign-up-btn').hide()
   $('#sign-in-btn').hide()
-  $('#survey-form').show()
-  $('#survey-title-form').show()
-  $('#survey-question-form').show()
+  $('.survey-box').show()
+  $('.surveyform').removeClass('hidden')
 }
 
-const signInFailure = function (error) {
-  $('#message').text('Error on sign in')
-  $('#message').removeClass()
-  $('#message').addClass('failure')
-  console.error('signInFailure ran. Error is :', error)
-}
+// const signInFailure = function (error) {
+//   $('#message').text('Error on sign in')
+//   $('#message').removeClass()
+//   $('#message').addClass('failure')
+//   console.error('signInFailure ran. Error is :', error)
+// }
 
 const onSignOutSuccess = (signOutResponse) => {
   $('#message').html('You have successfully signed out')
@@ -69,23 +68,21 @@ const onSignOutSuccess = (signOutResponse) => {
   $('#sign-up-btn').show()
   $('#sign-in-btn').show()
   $('#bottom-btn').hide()
-  $('#survey-form').hide()
-  $('#survey-title-form').hide()
-  $('#survey-question-form').hide()
-  // $('.get-all-meals').empty()
-  // $('.mealsforms').hide()
+  $('.survey-box').hide()
+  $('.surveyform').empty()
+  $('.surveyform').hide()
   $('#change-password-form').trigger('reset')
   setTimeout(function () {
     $('#message').fadeOut().empty()
   }, 1000)
 }
 
-const signOutFailure = function (error) {
-  $('#message').text('Error on sign out')
-  $('#message').removeClass()
-  $('#message').addClass('failure')
-  console.error('signOutFailure ran. Error is :', error)
-}
+// const signOutFailure = function (error) {
+//   $('#message').text('Error on sign out')
+//   $('#message').removeClass()
+//   $('#message').addClass('failure')
+//   console.error('signOutFailure ran. Error is :', error)
+// }
 
 const changePasswordSuccess = (changePasswordResponse) => {
   $('#message').html('You changed your password successfully')
@@ -94,22 +91,22 @@ const changePasswordSuccess = (changePasswordResponse) => {
   $('#change-password-form').hide()
 }
 
-const changePasswordFailure = function (error) {
-  $('#message').text('Error on change password')
-  $('#message').removeClass()
-  $('#message').addClass('failure')
-  console.error('changePasswordFailure ran. Error is :', error)
-}
+// const changePasswordFailure = function (error) {
+//   $('#message').text('Error on change password')
+//   $('#message').removeClass()
+//   $('#message').addClass('failure')
+//   console.error('changePasswordFailure ran. Error is :', error)
+// }
 
 module.exports = {
   signUpSuccess,
-  signUpFailure,
+  // signUpFailure,
   signInSuccess,
-  signInFailure,
+  // signInFailure,
   onSignOutSuccess,
   // signOutSuccess,
-  signOutFailure,
+  // signOutFailure,
   changePasswordSuccess,
-  changePasswordFailure,
+  // changePasswordFailure,
   failure
 }
