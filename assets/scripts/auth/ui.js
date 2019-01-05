@@ -2,32 +2,47 @@
 
 const store = require('../store')
 
-const signUpSuccess = function (data) {
-  $('#message').text('Signed up successfully')
-  $('#message').removeClass()
-  $('#message').addClass('success')
-  console.log('signUpSuccess ran. Data is :', data)
+const signUpSuccess = (signUpResponse) => {
+  $('#message').html('You signed up successfully')
+  $('#message').addClass('success-message')
+  $('#message').removeClass('error-message')
+  $('#change-password-form').removeClass('hidden')
+  $('#sign-out').removeClass('hidden')
+  $('#sign-up-form').addClass('hidden')
+  $('#sign-up-form').hide()
 }
 
-const signUpFailure = function (error) {
-  $('#message').text('Error on sign up')
-  $('#message').removeClass()
-  $('#message').addClass('failure')
-  console.error('signUpFailure ran. Error is :', error)
+const failure = (failureResponse) => {
+  $('#message').html('Something went wrong! Try again!')
+  $('#message').removeClass('success-message')
+  $('#message').addClass('error-message')
 }
 
-const signInSuccess = function (data, user) {
-  $('#message').text('Signed in successfully')
-  $('#message').removeClass()
-  $('#message').addClass('success')
+const signUpFailure = (failureResponse) => {
+  $('#message').html('Sign up failed! Check your password! Minimum 6 characters')
+  $('#message').removeClass('success-message')
+  $('#message').addClass('error-message')
+}
+
+const signInSuccess = (signInResponse) => {
+  store.user = signInResponse.user
+  $('#message').show()
+  $('#message').html('You signed in successfully')
+  $('#message').addClass('success-message')
+  $('#message').removeClass('error-message')
+  $('#change-password-form').removeClass('hidden')
+  $('#sign-out').removeClass('hidden')
   $('#sign-up-form').addClass('hidden')
   $('#sign-in-form').addClass('hidden')
-  $('#sign-out-form').removeClass('hidden')
-  $('#change-password-form').removeClass('hidden')
-  $('#survey-form').removeClass('hidden')
-  console.log('signInSuccess ran. Data is :', data)
-  store.user = data.user
-  console.log(store.user)
+  $('#sign-up-form').hide()
+  $('#sign-in-form').hide()
+  $('#sign-out-btn').show()
+  $('#change-pass-btn').show()
+  $('#sign-up-btn').hide()
+  $('#sign-in-btn').hide()
+  $('#survey-form').show()
+  $('#survey-title-form').show()
+  $('#survey-question-form').show()
 }
 
 const signInFailure = function (error) {
@@ -37,16 +52,32 @@ const signInFailure = function (error) {
   console.error('signInFailure ran. Error is :', error)
 }
 
-const signOutSuccess = function () {
-  $('#message').text('Signed out successfully')
-  $('#message').removeClass()
-  $('#message').addClass('success')
+const onSignOutSuccess = (signOutResponse) => {
+  $('#message').html('You have successfully signed out')
+  $('#message').addClass('success-message')
+  $('#message').removeClass('error-message')
+  $('#change-password-form').addClass('hidden')
+  $('#sign-out').addClass('hidden')
   $('#sign-up-form').removeClass('hidden')
   $('#sign-in-form').removeClass('hidden')
-  $('#sign-out-form').addClass('hidden')
-  $('#change-password-form').addClass('hidden')
-  console.log('signOutSuccess ran and nothing was returned!')
-  store.user = null
+  $('#message-box').empty()
+  $('#sign-out-btn').hide()
+  $('#change-pass-btn').hide()
+  $('#sign-up-form').hide()
+  $('#sign-in-form').hide()
+  $('#change-password-form').hide()
+  $('#sign-up-btn').show()
+  $('#sign-in-btn').show()
+  $('#bottom-btn').hide()
+  $('#survey-form').hide()
+  $('#survey-title-form').hide()
+  $('#survey-question-form').hide()
+  // $('.get-all-meals').empty()
+  // $('.mealsforms').hide()
+  $('#change-password-form').trigger('reset')
+  setTimeout(function () {
+    $('#message').fadeOut().empty()
+  }, 1000)
 }
 
 const signOutFailure = function (error) {
@@ -56,11 +87,11 @@ const signOutFailure = function (error) {
   console.error('signOutFailure ran. Error is :', error)
 }
 
-const changePasswordSuccess = function () {
-  $('#message').text('Changed password successfully')
-  $('#message').removeClass()
-  $('#message').addClass('success')
-  console.log('changePasswordSuccess ran and nothing was returned!')
+const changePasswordSuccess = (changePasswordResponse) => {
+  $('#message').html('You changed your password successfully')
+  $('#message').addClass('success-message')
+  $('#message').removeClass('error-message')
+  $('#change-password-form').hide()
 }
 
 const changePasswordFailure = function (error) {
@@ -75,8 +106,10 @@ module.exports = {
   signUpFailure,
   signInSuccess,
   signInFailure,
-  signOutSuccess,
+  onSignOutSuccess,
+  // signOutSuccess,
   signOutFailure,
   changePasswordSuccess,
-  changePasswordFailure
+  changePasswordFailure,
+  failure
 }
