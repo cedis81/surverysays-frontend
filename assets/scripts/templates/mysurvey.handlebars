@@ -1,0 +1,28 @@
+{{#each this as |survey|}}
+{{#mysurvey}}
+<div class="my-survey" data-id="{{id}}">
+  <div class="survey-title" data-id="{{id}}">
+    <h5>
+      Title: <div class="each-survey-title-{{id}}">{{title}}</div>
+    </h5>
+  </div>
+<!-- view -->
+<div class="survey-question" data-id="{{id}}">
+  <h5>
+    Question: <div class="each-survey-question{{id}}">{{question}}</div>
+  </h5>
+</div>
+<div class="update-{{id}} hidden" data-id="{{id}}">
+  <form class="update-survey-form" data-id="{{id}}">
+    <input class="title-update-{{id}}" type="text" placeholder="Update Title" data-id="{{id}}">
+    <input class="question-update-{{id}}" type="text" placeholder="Update Question" data-id="{{id}}">
+    <button class="submit-btn submit-btn-{{id}}" type="submit" value="submit" data-id="{{id}}">Submit Update</button>
+  </form>
+</div>
+  <button class="btn btn-default delete-survey">Remove Survey</button>
+  <button class="btn btn-default update-survey" data-id="{{id}}">Update Survey</button>
+</div>
+{{/mysurvey}}
+{{#else}}
+  <p> You do not have any surveys. Create one now! </p>
+{{/each}}
