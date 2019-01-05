@@ -17,13 +17,13 @@ const onGetSurveys = (event) => {
     .catch(ui.failure)
 }
 
-const onViewSurvey = (event) => {
-  event.preventDefault()
-  const id = $(event.target).closest('section').data('id')
-  api.viewSurvey(id)
-    .then(ui.viewSurveySuccess)
-    .catch(ui.failure)
-}
+// const onViewSurvey = (event) => {
+//   event.preventDefault()
+//   const id = $(event.currentTarget).data('id')
+//   api.viewSurvey(id)
+//     .then(ui.viewSurveySuccess)
+//     .catch(ui.failure)
+// }
 
 const onUpdateSurvey = (event) => {
   event.preventDefault()
@@ -32,6 +32,7 @@ const onUpdateSurvey = (event) => {
   const title = $('.title-update-' + event.target.attributes['data-id'].value).val()
   const question = $('.question-update-' + event.target.attributes['data-id'].value).val()
   api.updateSurvey(id, title, question, owner)
+    .then(() => onGetSurveys(event))
     .then(ui.updateSurveySuccess)
     .catch(ui.failure)
 }
@@ -68,7 +69,7 @@ const addSurveyHandlers = () => {
 module.exports = {
   addSurveyHandlers,
   onGetSurveys,
-  onViewSurvey,
+  // onViewSurvey,
   onUpdateSurvey,
   onDeleteSurvey
 }
