@@ -13,9 +13,9 @@ const getSurveysSuccess = (survey) => {
   //   zeroSurveys()
   // } else {
   const showAllMySurveys = showMySurveys({ surveys: survey.surveys })
-  $('.survey-box').html(showAllMySurveys)
+  $('.get-all-surveys').html(showAllMySurveys)
   console.log('HI', survey)
-  $('.survey-box').removeClass('hidden')
+  $('.get-all-surveys').removeClass('hidden')
   // }
 }
 
