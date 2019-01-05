@@ -1,0 +1,27 @@
+{{#each this as |allsurvey|}}
+{{#allsurvey}}
+<section>
+<div class="all-survey" data-id="{{id}}">
+  <div class="survey-title" data-id="{{id}}">
+    <h5>
+      Title: <div class="survey-title">{{title}}</div>
+    </h5>
+  </div>
+  <div class="survey-question" data-id="{{id}}">
+    <h5>
+      Question: <div class="survey-question">{{question}}</div>
+    </h5>
+  </div>
+  <div class="survey-answer" data-id="{{id}}">
+    <select id="survey-answer">
+      <option value="">Answers</option>
+      <option value="Agree" name="survey[answer]">Agree</option>
+      <option value="Disagree" name="survey[answer]">Disagree</option>
+    </select>
+   <button class="btn submit-answer-{{id}}" type="submit" value="submit">Submit answer</button>
+</div>
+  </div>
+  <!-- <button class="submit-btn submit-btn-{{id}}" type="submit" value="submit" data-id="{{id}}">Submit</button> -->
+</section>
+{{/allsurvey}}
+{{/each}}
