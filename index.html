@@ -27,16 +27,16 @@
 
         <form id="sign-up-form">
           <legend>Sign-Up Form</legend>
-          <input name="credentials[email]" type="email" placeholder="email">
-          <input name="credentials[password]" type="password" placeholder="password">
-          <input name="credentials[password_confirmation]" type="password" placeholder="password confirmation">
+          <input class="input-field-clear" name="credentials[email]" type="email" placeholder="email">
+          <input class="input-field-clear" name="credentials[password]" type="password" placeholder="password">
+          <input class="input-field-clear" name="credentials[password_confirmation]" type="password" placeholder="password confirmation">
           <input type="submit">
         </form>
 
         <form id="sign-in-form">
           <legend>Sign-In Form</legend>
-          <input name="credentials[email]" type="email" placeholder="email">
-          <input name="credentials[password]" type="password" placeholder="password">
+          <input class="input-field-clear" name="credentials[email]" type="email" placeholder="email">
+          <input class="input-field-clear" name="credentials[password]" type="password" placeholder="password">
           <input type="submit">
         </form>
 
@@ -65,31 +65,23 @@
         </div>
         <div class="get-my-surveys hidden">
         </div>
-
-      <form id="survey-form" class="hidden">
-        <div class="surveyform hidden" id="survey-title-form">
+    <div class="create-survey hidden">
+      <form id="survey-form">
+        <div class="surveyform" id="survey-title-form">
           <legend> Title </legend>
-          <input class="title-submit" name="survey[title]" type="text" placeholder="survey title">
+          <input class="formempty title-submit" name="survey[title]" type="text" placeholder="survey title">
         </div>
 
-        <div class="surveyform hidden" id="survey-question-form">
+        <div class="surveyform" id="survey-question-form">
           <legend> Question </legend>
-          <textarea class="question-submit" name="survey[question]" type="text" placeholder="survey question"></textarea>
+          <textarea class="formempty question-submit" name="survey[question]" type="text" placeholder="survey question"></textarea>
         </div>
 
-        <!-- <div class="surveyforms hidden" id="survey-answers-form">
-          <legend> Answers</legend>
-          <select id="survey-type">
-            <option value="">Answers</option>
-            <option value="Agree" name="survey[answer]">Agree</option>
-            <option value="Disagree" name="survey[answer]">Disagree</option>
-          </select>
-        </div> -->
-
-        <div class="surveyform hidden">
+        <div class="surveyform">
           <button id="submit-button" type="submit" value="submit">Create Survey</button>
         </div>
       </form>
+    </div>
     </div>
   </body>
 </html>

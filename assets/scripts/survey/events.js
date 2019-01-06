@@ -48,22 +48,23 @@ const addSurveyHandlers = () => {
   $('#survey-form').on('submit', onCreateSurvey)
   $('#get-survey-btn').on('click', onGetSurveys)
   $('#my-survey-btn').on('click', onViewSurvey)
-  $('#create-survey-btn').click(() => {
-    $('.get-all-surveys').hide()
-    $('#survey-form').show()
-  })
+  // $('#create-survey-btn').click(() => {
+  //   $('.get-all-surveys').hide()
+  //   $('#survey-form').show()
+  // })
   $('#get-survey-btn').click(() => {
-    $('#survey-form').hide()
+    $('.create-survey').hide()
     $('.get-my-surveys').hide()
     $('.get-all-surveys').show()
   })
   $('#create-survey-btn').click(() => {
-    $('#survey-form').show()
+    $('.create-survey').show()
+    // $('.create-survey').removeClass('hidden')
     $('.get-my-surveys').hide()
     $('.get-all-surveys').hide()
   })
   $('#my-survey-btn').click(() => {
-    $('#survey-form').hide()
+    $('.create-survey').hide()
     $('.get-all-surveys').hide()
     $('.get-my-surveys').show()
   })
