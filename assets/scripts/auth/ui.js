@@ -41,7 +41,8 @@ const signInSuccess = (signInResponse) => {
   $('#sign-up-btn').hide()
   $('#sign-in-btn').hide()
   $('.survey-box').show()
-  $('.surveyform').removeClass('hidden')
+  // $('.create-survey').show()
+  // $('.create-survey').removeClass('hidden')
 }
 
 // const signInFailure = function (error) {
@@ -70,8 +71,10 @@ const onSignOutSuccess = (signOutResponse) => {
   $('#bottom-btn').hide()
   $('.survey-box').hide()
   $('.get-all-surveys').empty()
-  $('.surveyform').empty()
-  $('.surveyform').hide()
+  $('.get-my-surveys').empty()
+  $('.formempty').val('')
+  $('.create-survey').addClass('hidden')
+  $('.create-survey').hide()
   $('#change-password-form').trigger('reset')
   setTimeout(function () {
     $('#message').fadeOut().empty()

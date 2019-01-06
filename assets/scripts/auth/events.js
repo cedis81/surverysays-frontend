@@ -50,12 +50,14 @@ const addAuthHandlers = () => {
   $('#sign-up-btn').click(function () {
     $('#sign-up-form').show()
     $('#sign-in-form').hide()
+    $('.input-field-clear').val('')
     $('#change-password-form').hide()
     $('#message').show(500)
   })
   $('#sign-in-btn').click(function () {
     $('#sign-in-form').show()
     $('#sign-up-form').hide()
+    $('.input-field-clear').val('')
     $('#change-password-form').hide()
     $('#message').show(500)
   })
