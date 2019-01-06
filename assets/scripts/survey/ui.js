@@ -22,6 +22,9 @@ const viewSurveySuccess = (survey) => {
   const mySurveys = showMySurveys({ surveys: survey.surveys })
   $('.get-my-surveys').html(mySurveys)
   $('.get-my-surveys').removeClass('hidden')
+  $('.update-survey').click(() => {
+    $('.update-' + event.target.attributes['data-id'].value).removeClass('hidden')
+  })
 }
 const zeroSurveys = () => {
   $('.get-all-surveys').html('There are currently no surveys created. Please create one to get started.')
