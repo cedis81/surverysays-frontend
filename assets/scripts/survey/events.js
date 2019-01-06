@@ -31,7 +31,7 @@ const onUpdateSurvey = (event) => {
   const title = $('.title-update-' + event.target.attributes['data-id'].value).val()
   const question = $('.question-update-' + event.target.attributes['data-id'].value).val()
   api.updateSurvey(id, title, question, owner)
-    .then(() => onGetSurveys(event))
+    .then(() => onViewSurvey(event))
     .then(ui.updateSurveySuccess)
     .catch(ui.failure)
 }
@@ -40,7 +40,7 @@ const onDeleteSurvey = (event) => {
   event.preventDefault()
   const id = $(event.currentTarget).data('id')
   api.deleteSurvey(id)
-    .then(() => onGetSurveys(event))
+    .then(() => onViewSurvey(event))
     .catch(ui.failure)
 }
 
@@ -48,10 +48,6 @@ const addSurveyHandlers = () => {
   $('#survey-form').on('submit', onCreateSurvey)
   $('#get-survey-btn').on('click', onGetSurveys)
   $('#my-survey-btn').on('click', onViewSurvey)
-  // $('#create-survey-btn').click(() => {
-  //   $('.get-all-surveys').hide()
-  //   $('#survey-form').show()
-  // })
   $('#get-survey-btn').click(() => {
     $('.create-survey').hide()
     $('.get-my-surveys').hide()
@@ -62,6 +58,7 @@ const addSurveyHandlers = () => {
     // $('.create-survey').removeClass('hidden')
     $('.get-my-surveys').hide()
     $('.get-all-surveys').hide()
+    $('#survey-form').show()
   })
   $('#my-survey-btn').click(() => {
     $('.create-survey').hide()
