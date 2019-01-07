@@ -97,6 +97,8 @@ body {
 }
 
 .forms {
+  color: $navbarcolor;
+  text-shadow: 2px 2px black;
   background-color: $navbar;
   background-blend-mode: lighten;
   display: flex;
