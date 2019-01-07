@@ -12,6 +12,7 @@ const getSurveysSuccess = (survey) => {
   const allSurveys = showAllSurveys({ surveys: survey.surveys })
   $('.get-all-surveys').html(allSurveys)
   $('.get-all-surveys').removeClass('hidden')
+  $('#survey-form').trigger('reset')
 }
 
 const viewSurveySuccess = (survey) => {
