@@ -82,7 +82,7 @@ body {
   // margin: 3px 3px;
 }
 .navbar {
-  background-color: $navbar;
+  // background-color: $navbar;
   background-blend-mode: lighten;
   font-size: 30px;
   .btn {
@@ -99,13 +99,14 @@ body {
 .forms {
   color: $navbarcolor;
   text-shadow: 2px 2px black;
-  background-color: $navbar;
+  // background-color: $navbar;
   background-blend-mode: lighten;
-  display: flex;
+  // display: flex;
   align-items: center;
   width: 100%;
   justify-content: center;
   flex-direction: column;
+  margin: 10px 10px;
   // margin-bottom: 20px;
   #sign-up-form {
     display: none;
