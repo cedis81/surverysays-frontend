@@ -1,14 +1,15 @@
-const getFormFields = require('../../../lib/get-form-fields')
+// const getFormFields = require('../../../lib/get-form-fields')
 const api = require('./api')
+// const store = require('../store.js')
 const ui = require('./ui')
+// const surveys = require('../survey/events')
 
 const onCreateAnswer = (event) => {
   event.preventDefault()
   const id = $(event.currentTarget).data('id')
   const answer = $('.survey-answer-' + event.target.attributes['data-id'].value).val()
-  console.log(id, answer)
   api.createAnswer(id, answer)
-    // .then(ui.createSurveySuccess)
+    .then(ui.createAnswerSuccess)
     .catch(ui.failure)
 }
 

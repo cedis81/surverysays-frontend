@@ -13,13 +13,14 @@
   </div>
   <div class="survey-answer" data-id="{{_id}}">
     <form class="survey-answer-create" data-id="{{_id}}">
-    <select id="survey-answer" class="survey-answer-{{_id}}">
+    <select class="survey-answer-{{_id}}">
       <option value="">Answers</option>
       <option value="Agree" name="survey[answer]">Agree</option>
       <option value="Disagree" name="survey[answer]">Disagree</option>
     </select>
     <button class="btn submit-answer-{{_id}}" type="submit" value="submit">Submit answer</button>
 </form>
+<button class="btn btn-default show-answer" data-id="{{_id}}">Show Results</button>
 </div>
   </div>
   <!-- <button class="submit-btn submit-btn-{{_id}}" type="submit" value="submit" data-id="{{_id}}">Submit</button> -->
