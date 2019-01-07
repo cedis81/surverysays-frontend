@@ -23,7 +23,7 @@ const viewSurveySuccess = (survey) => {
   $('.get-my-surveys').html(mySurveys)
   $('.get-my-surveys').removeClass('hidden')
   $('.update-survey').click(() => {
-    $('.update-' + event.target.attributes['data-id'].value).removeClass('hidden')
+    $('.update-' + event.target.attributes['data-id'].value).fadeToggle()
   })
 }
 const zeroSurveys = () => {
