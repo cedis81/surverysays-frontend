@@ -55,32 +55,34 @@
       <div class="survey-box hidden">
 
         <div class="button-grp">
-          <button class="survey-btns" id="create-survey-btn" type="button">Create Your Survey</button>
-          <button class="survey-btns" id="get-survey-btn" type="button">View All Surveys</button>
-          <button class="survey-btns" id="my-survey-btn" type="button">My Surveys</button>
+          <button class="survey-btns btn btn-default" id="create-survey-btn" type="button">Create Your Survey</button>
+          <button class="survey-btns btn btn-default" id="get-survey-btn" type="button">View All Surveys</button>
+          <button class="survey-btns btn btn-default" id="my-survey-btn" type="button">My Surveys</button>
         </div>
 
         <div class="get-all-surveys hidden">
         </div>
+
         <div class="get-my-surveys hidden">
         </div>
     <div class="create-survey hidden">
       <form id="survey-form">
-        <div class="surveyform" id="survey-title-form">
-          <legend> Title </legend>
+        <!-- <div class="surveyform" id="survey-title-form">
+          <h6> Title </h6>
           <input class="formempty title-submit" name="survey[title]" type="text" placeholder="survey title">
-        </div>
+        </div> -->
 
         <div class="surveyform" id="survey-question-form">
-          <legend> Question </legend>
+          <h6> Question </h6>
           <textarea class="formempty question-submit" name="survey[question]" type="text" placeholder="survey question"></textarea>
         </div>
 
         <div class="surveyform">
-          <button id="submit-button" type="submit" value="submit">Create Survey</button>
+          <button class="btn btn-default" id="submit-button" type="submit" value="submit">Create Survey</button>
         </div>
       </form>
     </div>
     </div>
+
   </body>
 </html>
