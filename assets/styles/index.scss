@@ -60,11 +60,13 @@ body {
 }
 
 .error-message {
-  color: $black;
+  color: $navbarcolor;
+  text-shadow: 3px 3px black;
 }
 
 .success-message {
-  color: $black;
+  color: $navbarcolor;
+  text-shadow: 3px 3px black;
 }
 .hidden {
   display: none;
@@ -72,12 +74,12 @@ body {
 
 #sign-out-btn {
   display: none;
-  margin: 0 auto;
+  // margin: 3px 3px;
 }
 
 #change-pass-btn {
   display: none;
-  margin: 0 auto;
+  // margin: 3px 3px;
 }
 .navbar {
   background-color: $navbar;
@@ -85,11 +87,11 @@ body {
   font-size: 30px;
   .btn {
     border: 1px solid white;
-    margin: 5px 5px;
+    margin: 3px 3px;
   }
   .navbar-brand{
   color: $navbarcolor;
-  -webkit-text-stroke: 0.75px black;
+  text-shadow: 3px 3px black;
   font-size: 40px;
   }
 }
@@ -196,9 +198,9 @@ body {
 
 .messagegrid {
   display: flex;
-  align-items: center;
+  // align-items: center;
   width: 100%;
-  font-size: 30px;
+  font-size: 35px;
   justify-content: space-around;
   flex-direction: column;
   margin-top: 20px;
