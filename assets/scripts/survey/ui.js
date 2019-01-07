@@ -9,17 +9,17 @@ const createSurveySuccess = (createSurveyResponse) => {
 
 const getSurveysSuccess = (survey) => {
   store.survey = survey
-  if (survey.surveys.length === 0) {
-    zeroSurveys()
-  } else {
-    const allSurveys = showAllSurveys({ surveys: survey.surveys })
-    $('.get-all-surveys').html(allSurveys)
-    $('.get-all-surveys').removeClass('hidden')
-  }
+  const allSurveys = showAllSurveys({ surveys: survey.surveys })
+  $('.get-all-surveys').html(allSurveys)
+  $('.get-all-surveys').removeClass('hidden')
+  $('#survey-form').trigger('reset')
+  $('#message').html('')
 }
+
 const viewSurveySuccess = (survey) => {
   store.survey = survey
-  const mySurveys = showMySurveys({ surveys: survey.surveys })
+  const mySurveyArray = store.survey.surveys.filter(survey => survey.owner === store.user._id)
+  const mySurveys = showMySurveys({ surveys: mySurveyArray })
   $('.get-my-surveys').html(mySurveys)
   $('.get-my-surveys').removeClass('hidden')
   $('.update-survey').click(() => {
@@ -27,9 +27,8 @@ const viewSurveySuccess = (survey) => {
     $('.title-update-' + event.target.attributes['data-id'].value).val('')
     $('.question-update-' + event.target.attributes['data-id'].value).val('')
   })
-}
-const zeroSurveys = () => {
-  $('.get-all-surveys').html('There are currently no surveys created. Please create one to get started.')
+  $('#survey-form').trigger('reset')
+  $('#message').html('')
 }
 
 const updateSurveySuccess = () => {
