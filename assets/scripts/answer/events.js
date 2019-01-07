@@ -6,7 +6,7 @@ const onCreateAnswer = (event) => {
   event.preventDefault()
   const id = $(event.currentTarget).data('id')
   const answer = $('.survey-answer-' + event.target.attributes['data-id'].value).val()
-console.log(id, answer)
+  console.log(id, answer)
   api.createAnswer(id, answer)
     // .then(ui.createSurveySuccess)
     .catch(ui.failure)

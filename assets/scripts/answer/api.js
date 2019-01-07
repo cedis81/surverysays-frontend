@@ -5,6 +5,9 @@ const createAnswer = (id, answer) => {
   return $.ajax({
     url: config.apiUrl + `/surveys/${id}/answers`,
     method: 'POST',
+    headers: {
+      Authorization: `Token token=${store.user.token}`
+    },
     contentType: 'application/json',
     data: JSON.stringify({
       'answer': {
