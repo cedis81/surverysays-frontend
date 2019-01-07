@@ -85,6 +85,10 @@ body {
   // background-color: $navbar;
   background-blend-mode: lighten;
   font-size: 30px;
+  display: flex;
+  align-items: center;
+  margin-left: 40%;
+  // justify-content: center;
   .btn {
     border: 1px solid white;
     margin: 3px 3px;
