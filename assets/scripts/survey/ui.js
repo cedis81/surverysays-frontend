@@ -26,6 +26,7 @@ const viewSurveySuccess = (survey) => {
     $('.title-update-' + event.target.attributes['data-id'].value).val('')
     $('.question-update-' + event.target.attributes['data-id'].value).val('')
   })
+  $('#survey-form').trigger('reset')
 }
 
 const updateSurveySuccess = () => {
