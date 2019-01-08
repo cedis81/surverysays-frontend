@@ -24,7 +24,6 @@ const viewSurveySuccess = (survey) => {
   $('.get-my-surveys').removeClass('hidden')
   $('.update-survey').click(() => {
     $('.update-' + event.target.attributes['data-id'].value).fadeToggle()
-    $('.title-update-' + event.target.attributes['data-id'].value).val('')
     $('.question-update-' + event.target.attributes['data-id'].value).val('')
   })
   $('#survey-form').trigger('reset')
@@ -36,7 +35,7 @@ const updateSurveySuccess = () => {
 }
 
 const failure = (failureResponse) => {
-  console.log('something went wrong')
+  // console.log('something went wrong')
 }
 
 module.exports = {
