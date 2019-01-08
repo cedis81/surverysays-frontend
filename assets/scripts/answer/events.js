@@ -9,10 +9,14 @@ const onCreateAnswer = (event) => {
   const id = $(event.currentTarget).data('id')
   // console.log('create answer', id)
   const answer = $('.survey-answer-' + event.target.attributes['data-id'].value).val()
-  api.createAnswer(id, answer)
-    .then(ui.createAnswerSuccess)
-    .then(() => onGetAnswers(event))
-    .catch(ui.failure)
+  if (answer === '') {
+    return $('#message').html('Please select an answer.')
+  } else {
+    api.createAnswer(id, answer)
+      .then(ui.createAnswerSuccess)
+      .then(() => onGetAnswers(event))
+      .catch(ui.failure)
+  }
 }
 
 const onGetAnswers = function (event) {
