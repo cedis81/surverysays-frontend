@@ -21,7 +21,7 @@ Username:demo@demo password:demo
 - Javascript
 - CSS/Sass
 - Ajax
-- Boostrap
+- Bootstrap
 - Handlebars
 
 
