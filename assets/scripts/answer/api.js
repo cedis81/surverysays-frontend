@@ -17,9 +17,9 @@ const createAnswer = (id, answer) => {
   })
 }
 
-const viewSurvey = (surveyId) => {
+const getAnswers = (id) => {
   return $.ajax({
-    url: config.apiUrl + `/surveys/${surveyId}`,
+    url: config.apiUrl + `/surveys/${id}/answers`,
     method: 'GET',
     headers: {
       Authorization: `Token token=${store.user.token}`
@@ -29,5 +29,5 @@ const viewSurvey = (surveyId) => {
 
 module.exports = {
   createAnswer,
-  viewSurvey
+  getAnswers
 }
