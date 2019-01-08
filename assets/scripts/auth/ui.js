@@ -3,6 +3,7 @@
 const store = require('../store')
 
 const signUpSuccess = (signUpResponse) => {
+  $('#message').show()
   $('#message').html('You signed up successfully')
   $('#message').addClass('success-message')
   $('#message').removeClass('error-message')
@@ -10,12 +11,19 @@ const signUpSuccess = (signUpResponse) => {
   // $('#sign-out').removeClass('hidden')
   $('#sign-up-form').addClass('hidden')
   $('#sign-up-form').hide()
+  setTimeout(function () {
+    $('#message').fadeOut()
+  }, 500)
 }
 
 const failure = (failureResponse) => {
+  $('#message').show()
   $('#message').html('Something went wrong! Try again!')
   $('#message').removeClass('success-message')
   $('#message').addClass('error-message')
+  setTimeout(function () {
+    $('#message').fadeOut()
+  }, 500)
 }
 
 // const signUpFailure = (failureResponse) => {
@@ -41,6 +49,9 @@ const signInSuccess = (signInResponse) => {
   $('#sign-up-btn').hide()
   $('#sign-in-btn').hide()
   $('.survey-box').show()
+  setTimeout(function () {
+    $('#message').fadeOut()
+  }, 500)
   // $('.create-survey').show()
   // $('.create-survey').removeClass('hidden')
 }
