@@ -7,24 +7,23 @@ const ui = require('./ui')
 const onCreateAnswer = (event) => {
   event.preventDefault()
   const id = $(event.currentTarget).data('id')
+  console.log('create answer', id)
   const answer = $('.survey-answer-' + event.target.attributes['data-id'].value).val()
   api.createAnswer(id, answer)
     .then(ui.createAnswerSuccess)
+    .then(() => onGetAnswers(event))
     .catch(ui.failure)
 }
 
-// const onGetAnswer = function (event) {
-//   event.preventDefault()
-//   const id = $(event.target).closest('section').data('id')
-//   api.viewSurvey(id)
-//     .then(survey => {
-//       // check
-//     // responseArray = survey.survey.responses
-//       calculateAnswer(id)
-//     })
-//     .catch(ui.failure)
-// }
-//
+const onGetAnswers = function (event) {
+  event.preventDefault()
+  const id = $(event.currentTarget).data('id')
+  console.log('hiiiii', id)
+  api.getAnswers(id)
+    .then(ui.getAnswersSuccess)
+    .catch(ui.failure)
+}
+
 // const calculateAnswer = (event) => {
 //   const
 //   let count = 0
@@ -33,10 +32,10 @@ const onCreateAnswer = (event) => {
 //     if(array[i] == )
 //         count++
 // }
+
 const addAnswerHandlers = () => {
   $('.survey-box').on('submit', '.survey-answer-create', onCreateAnswer)
-//   $('#new-survey-btn').on('click', onGetSurveys)
-//   $('.survey-box').on('submit', '.update-survey-form', onUpdateSurvey)
+  $('.survey-box').on('click', '.show-answer', onGetAnswers)
 }
 
 module.exports = {
