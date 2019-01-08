@@ -102,10 +102,14 @@ const onSignOutSuccess = (signOutResponse) => {
 // }
 
 const changePasswordSuccess = (changePasswordResponse) => {
+  $('#message').show()
   $('#message').html('You changed your password successfully')
   $('#message').addClass('success-message')
   $('#message').removeClass('error-message')
   $('#change-password-form').hide()
+  setTimeout(function () {
+    $('#message').fadeOut()
+  }, 500)
 }
 
 // const changePasswordFailure = function (error) {
