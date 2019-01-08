@@ -76,6 +76,13 @@ body {
   background-size: cover;
   background-color: rgba(255, 255, 255, 0.8);
   background-blend-mode: lighten;
+  #survey-count {
+    font-size: 25px;
+    margin: 10px 10px;
+    text-align: center;
+    // display: flex;
+    justify-content: center;
+  }
   #message{
     font-size: 25px;
     margin: 10px 10px;

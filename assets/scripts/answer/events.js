@@ -9,10 +9,19 @@ const onCreateAnswer = (event) => {
   const id = $(event.currentTarget).data('id')
   // console.log('create answer', id)
   const answer = $('.survey-answer-' + event.target.attributes['data-id'].value).val()
-  api.createAnswer(id, answer)
-    .then(ui.createAnswerSuccess)
-    .then(() => onGetAnswers(event))
-    .catch(ui.failure)
+  if (answer === '') {
+    return (
+      $('#message').show(),
+      $('#message').html('Please select an answer.'),
+      setTimeout(function () {
+        $('#message').fadeToggle()
+      }, 1000))
+  } else {
+    api.createAnswer(id, answer)
+      .then(ui.createAnswerSuccess)
+      // .then(() => onGetAnswers(event))
+      .catch(ui.failure)
+  }
 }
 
 const onGetAnswers = function (event) {
@@ -23,6 +32,14 @@ const onGetAnswers = function (event) {
     .then(ui.getAnswersSuccess)
     .catch(ui.failure)
 }
+
+// const getMessage = function () {
+//   event.preventDefault()
+//   $('#message').show()
+//   setTimeout(function () {
+//     $('#message').fadeToggle()
+//   }, 1000)
+// }
 
 // const calculateAnswer = (event) => {
 //   const
@@ -36,6 +53,7 @@ const onGetAnswers = function (event) {
 const addAnswerHandlers = () => {
   $('.survey-box').on('submit', '.survey-answer-create', onCreateAnswer)
   $('.survey-box').on('click', '.show-answer', onGetAnswers)
+  // $('.survey-box').on('click', '.show-answer', getMessage)
 }
 
 module.exports = {

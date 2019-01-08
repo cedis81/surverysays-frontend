@@ -4,11 +4,15 @@
 
 const createAnswerSuccess = (data) => {
   const answerData = data
+  $('#message').show()
   $('#message').html(`You have ${answerData.answer.text.toLowerCase()}d with the survey!`)
   $('#message').addClass('success-message')
   $('#message').removeClass('error-message')
   $('.survey-answer-create').trigger('reset')
-  $('#message-box').show()
+  $('#message-box').hide()
+  setTimeout(function () {
+    $('#message').fadeToggle()
+  }, 1000)
 }
 
 const getAnswersSuccess = (data) => {
@@ -19,6 +23,9 @@ const getAnswersSuccess = (data) => {
   $('#message-box').html(`${agreeArray.length} people have agreed with the survey, ${disagreeArray.length} have disagreed with the survey`)
   $('#message-box').addClass('success-message')
   $('#message-box').removeClass('error-message')
+  setTimeout(function () {
+    $('#message').fadeOut()
+  }, 1000)
 }
 
 module.exports = {

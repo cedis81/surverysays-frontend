@@ -13,7 +13,8 @@ const getSurveysSuccess = (survey) => {
   $('.get-all-surveys').html(allSurveys)
   $('.get-all-surveys').removeClass('hidden')
   $('#survey-form').trigger('reset')
-  $('#message').html(`Total Surveys: ${store.survey.surveys.length}`)
+  $('#message').show()
+  $('#survey-count').html(`Total Surveys: ${store.survey.surveys.length}`)
 }
 
 const viewSurveySuccess = (survey) => {
@@ -27,7 +28,7 @@ const viewSurveySuccess = (survey) => {
     $('.question-update-' + event.target.attributes['data-id'].value).val('')
   })
   $('#survey-form').trigger('reset')
-  $('#message').html(`You have ${mySurveyArray.length} surveys`)
+  $('#survey-count').html(`You have ${mySurveyArray.length} surveys`)
 }
 
 const updateSurveySuccess = () => {
