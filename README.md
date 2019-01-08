@@ -8,11 +8,21 @@ Survey says app allows users to create a survey questions and get answers for th
 You can use this demo user
 Username:demo@demo password:demo
 
+### Group Members
+* [Hoa 'Tommy' Le](https://github.com/Tommyle90)
+
+* [Cedric Hom](https://github.com/cedis81)
+
+* [Bezawit Gebru](https://github.com/bbgweb)
+
+
 ### Technologies used
 - HTML
 - Javascript
 - CSS/Sass
 - Ajax
+- Boostrap
+- Handlebars
 
 
 
