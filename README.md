@@ -2,7 +2,11 @@
 
 ----
 
-Survey says app allows users to create a survey questions and get answers for them. A signed-in user creates a survey and can be able to update or delete their own surveys. All signed-in users can only view a survey and have an option to answer them. You can try it out using:
+Survey says app allows users to create a survey questions and get answers for them. A signed-in user creates a survey and can be able to update or delete their own surveys. All signed-in users can only view a survey and have an option to answer them. You can try it out using: https://Tommyle90.github.io/surverysays-frontend
+
+
+You can use this demo user
+Username:demo@demo password:demo
 
 ### Technologies used
 - HTML
@@ -34,7 +38,8 @@ UI is created inorder for the user to be able to see different messages whenever
 
 
 ### Wireframe
-https://imgur.com/a/wb99vKb
+![Wireframe Image](https://i.imgur.com/TotIBGt.jpg)
+
 
 ### Future Goals
 A user can only be able to answer a survey ones and hide the submit answer button.
@@ -42,5 +47,5 @@ A user can only be able to answer a survey ones and hide the submit answer butto
 ### Links
 >- https://github.com/cedis81/surveysays-backend - Backend App
 >- https://stormy-beyond-55396.herokuapp.com/- Heroku Site
->- https://github.com/Tommyle90/surverysays-frontend- Deployed App
->- https://Tommyle90.github.io/surverysays-frontend- GH Repo
+>- https://github.com/Tommyle90/surverysays-frontend- GH Repo
+>- https://Tommyle90.github.io/surverysays-frontend- Deployed App
