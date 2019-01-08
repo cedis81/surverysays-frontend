@@ -49,4 +49,3 @@ module.exports = {
   signOut,
   changePassword
 }
-// commit
