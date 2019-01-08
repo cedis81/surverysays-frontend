@@ -11,6 +11,7 @@ const onCreateAnswer = (event) => {
   const answer = $('.survey-answer-' + event.target.attributes['data-id'].value).val()
   api.createAnswer(id, answer)
     .then(ui.createAnswerSuccess)
+    .then(() => onGetAnswers(event))
     .catch(ui.failure)
 }
 
@@ -19,7 +20,7 @@ const onGetAnswers = function (event) {
   const id = $(event.currentTarget).data('id')
   console.log('hiiiii', id)
   api.getAnswers(id)
-    .then(console.log)
+    .then(ui.getAnswersSuccess)
     .catch(ui.failure)
 }
 
