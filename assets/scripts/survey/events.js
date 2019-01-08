@@ -69,7 +69,7 @@ const addSurveyHandlers = () => {
     $('#survey-count').html('Create a survey to begin!')
     setTimeout(function () {
       $('#message').fadeOut()
-    }, 1000)
+    })
   })
   $('#my-survey-btn').click(() => {
     $('.create-survey').hide()
