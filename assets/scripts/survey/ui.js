@@ -5,6 +5,9 @@ const showMySurveys = require('../templates/mysurvey.handlebars')
 const createSurveySuccess = (createSurveyResponse) => {
   $('#survey-form').trigger('reset')
   $('#message').html('Survey successfully created.')
+  setTimeout(function () {
+    $('#message').fadeOut()
+  }, 1000)
 }
 
 const getSurveysSuccess = (survey) => {

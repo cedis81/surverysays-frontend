@@ -55,15 +55,19 @@ const addSurveyHandlers = () => {
     $('#message').html('')
   })
   $('#create-survey-btn').click(() => {
-    $('#message').hide()
+    // $('#message').hide()
     $('.create-survey').show()
     // $('.create-survey').removeClass('hidden')
     $('.get-my-surveys').hide()
     $('.get-all-surveys').hide()
     $('#survey-form').show()
+    $('#message').show()
     $('#message-box').hide()
-    $('#message').html('')
+    // $('#message').html('')
     $('#survey-count').html('Create a survey to begin!')
+    setTimeout(function () {
+      $('#message').fadeOut()
+    }, 1000)
   })
   $('#my-survey-btn').click(() => {
     $('.create-survey').hide()

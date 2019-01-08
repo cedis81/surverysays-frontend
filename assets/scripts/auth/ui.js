@@ -53,6 +53,7 @@ const signInSuccess = (signInResponse) => {
 // }
 
 const onSignOutSuccess = (signOutResponse) => {
+  $('#message').show()
   $('#message').html('You have successfully signed out')
   $('#message').addClass('success-message')
   $('#message').removeClass('error-message')
@@ -61,6 +62,7 @@ const onSignOutSuccess = (signOutResponse) => {
   $('#sign-up-form').removeClass('hidden')
   $('#sign-in-form').removeClass('hidden')
   $('#message-box').empty()
+  $('#survey-count').empty()
   $('#sign-out-btn').hide()
   $('#change-pass-btn').hide()
   $('#sign-up-form').hide()
