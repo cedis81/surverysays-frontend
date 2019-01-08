@@ -14,7 +14,7 @@ const onCreateAnswer = (event) => {
   } else {
     api.createAnswer(id, answer)
       .then(ui.createAnswerSuccess)
-      .then(() => onGetAnswers(event))
+      // .then(() => onGetAnswers(event))
       .catch(ui.failure)
   }
 }
