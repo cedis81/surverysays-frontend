@@ -34,8 +34,8 @@ const viewSurvey = (surveyId) => {
   })
 }
 
-const updateSurvey = (id, title, question, owner) => {
-  console.log('store', store)
+const updateSurvey = (id, question, owner) => {
+  // console.log('store', store)
   return $.ajax({
     url: config.apiUrl + `/surveys/${id}`,
     method: 'PATCH',
@@ -46,7 +46,6 @@ const updateSurvey = (id, title, question, owner) => {
     data: JSON.stringify({
       'survey': {
         'owner': owner,
-        'title': title,
         'question': question
       }
     })
