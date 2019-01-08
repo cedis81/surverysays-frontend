@@ -15,6 +15,12 @@ Username:demo@demo password:demo
 
 * [Bezawit Gebru](https://github.com/bbgweb)
 
+### Links
+* [Backend App](https://github.com/cedis81/surveysays-backend)
+* [Heroku Site](https://stormy-beyond-55396.herokuapp.com/)
+* [GitHub Repo](https://github.com/Tommyle90/surverysays-frontend)
+* [Survey Says Website](https://Tommyle90.github.io/surverysays-frontend)
+
 
 ### Technologies used
 - HTML
@@ -53,9 +59,3 @@ UI is created inorder for the user to be able to see different messages whenever
 
 ### Future Goals
 A user can only be able to answer a survey ones and hide the submit answer button.
-
-### Links
->- https://github.com/cedis81/surveysays-backend - Backend App
->- https://stormy-beyond-55396.herokuapp.com/- Heroku Site
->- https://github.com/Tommyle90/surverysays-frontend- GH Repo
->- https://Tommyle90.github.io/surverysays-frontend- Deployed App
