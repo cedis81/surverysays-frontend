@@ -20,7 +20,7 @@ const getAnswersSuccess = (data) => {
   const answerData = data
   const agreeArray = answerData.answer.filter(answers => answers.text === 'Agree')
   const disagreeArray = answerData.answer.filter(answers => answers.text === 'Disagree')
-  $('#message-box').html(`${agreeArray.length} people have agreed with the survey, ${disagreeArray.length} have disagreed with the survey`)
+  $('#message-box').html(`${agreeArray.length} agreed with the survey, ${disagreeArray.length} disagreed with the survey`)
   $('#message-box').addClass('success-message')
   $('#message-box').removeClass('error-message')
   setTimeout(function () {
