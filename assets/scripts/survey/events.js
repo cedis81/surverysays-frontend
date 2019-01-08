@@ -52,6 +52,7 @@ const addSurveyHandlers = () => {
     $('.get-my-surveys').hide()
     $('.get-all-surveys').show()
     $('#message-box').hide()
+    $('#message').html('')
   })
   $('#create-survey-btn').click(() => {
     $('#message').hide()
@@ -61,12 +62,15 @@ const addSurveyHandlers = () => {
     $('.get-all-surveys').hide()
     $('#survey-form').show()
     $('#message-box').hide()
+    $('#message').html('')
+    $('#survey-count').html('Create a survey to begin!')
   })
   $('#my-survey-btn').click(() => {
     $('.create-survey').hide()
     $('.get-all-surveys').hide()
     $('.get-my-surveys').show()
     $('#message-box').hide()
+    $('#message').html('')
   })
   $('#submit-button').click(() => {
     $('#survey-form').hide()

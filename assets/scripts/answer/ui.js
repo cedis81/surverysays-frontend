@@ -23,6 +23,9 @@ const getAnswersSuccess = (data) => {
   $('#message-box').html(`${agreeArray.length} people have agreed with the survey, ${disagreeArray.length} have disagreed with the survey`)
   $('#message-box').addClass('success-message')
   $('#message-box').removeClass('error-message')
+  setTimeout(function () {
+    $('#message').fadeOut()
+  }, 1000)
 }
 
 module.exports = {
