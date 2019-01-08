@@ -7,7 +7,7 @@ const ui = require('./ui')
 const onCreateAnswer = (event) => {
   event.preventDefault()
   const id = $(event.currentTarget).data('id')
-  console.log('create answer', id)
+  // console.log('create answer', id)
   const answer = $('.survey-answer-' + event.target.attributes['data-id'].value).val()
   api.createAnswer(id, answer)
     .then(ui.createAnswerSuccess)
@@ -18,7 +18,7 @@ const onCreateAnswer = (event) => {
 const onGetAnswers = function (event) {
   event.preventDefault()
   const id = $(event.currentTarget).data('id')
-  console.log('hiiiii', id)
+  // console.log('hiiiii', id)
   api.getAnswers(id)
     .then(ui.getAnswersSuccess)
     .catch(ui.failure)

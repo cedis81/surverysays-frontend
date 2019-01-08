@@ -29,6 +29,7 @@ body {
   flex-direction: column;
   justify-content: center;
   margin: 20px auto 20px auto;
+  margin-top: 0px;
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -54,19 +55,51 @@ body {
     justify-content: center;
     text-align: center;
     padding: 10px;
-    margin: 10px 10px;
+    // margin: 10px 10px;
     border: 10px;
   }
 }
 
+.messagegrid {
+  border: 200px;
+  height: 100%;
+  width: 500px;
+  display: auto;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  margin: 20px auto 20px auto;
+  margin-bottom: 0px;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: rgba(255, 255, 255, 0.8);
+  background-blend-mode: lighten;
+  #message{
+    font-size: 25px;
+    margin: 10px 10px;
+    text-align: center;
+    // display: flex;
+    justify-content: center;
+  }
+  #message-box {
+    font-size: 25px;
+    margin: 10px 10px;
+    text-align: center;
+    // display: flex;
+    justify-content: center;
+  }
+}
+
 .error-message {
-  color: $navbarcolor;
-  text-shadow: 3px 3px black;
+  color: $black;
+  // text-shadow: 3px 3px black;
 }
 
 .success-message {
-  color: $navbarcolor;
-  text-shadow: 3px 3px black;
+  color: $black;
+  // text-shadow: 3px 3px black;
 }
 .hidden {
   display: none;
@@ -205,20 +238,3 @@ margin: 5px 5px;
     padding: 0;
     }
   }
-
-.messagegrid {
-  display: flex;
-  // align-items: center;
-  width: 100%;
-  font-size: 35px;
-  justify-content: space-around;
-  flex-direction: column;
-  margin-top: 20px;
-  height: 60px;
-  #message{
-    margin: 10px 10px;
-  }
-  #message-box {
-    margin: 10px 10px;
-  }
-}
