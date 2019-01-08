@@ -76,6 +76,7 @@ const addSurveyHandlers = () => {
     $('#change-password-form').hide()
     $('.get-all-surveys').hide()
     $('.get-my-surveys').show()
+    $('#message').show()
     $('#message-box').hide()
     $('#message').html('')
   })

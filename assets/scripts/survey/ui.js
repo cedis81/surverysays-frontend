@@ -35,7 +35,11 @@ const viewSurveySuccess = (survey) => {
 }
 
 const updateSurveySuccess = () => {
+  $('#message').show()
   $('#message').html('Survey successfully updated.')
+  setTimeout(function () {
+    $('#message').fadeOut()
+  }, 1000)
 }
 
 const failure = (failureResponse) => {
