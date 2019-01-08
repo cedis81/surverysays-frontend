@@ -53,6 +53,7 @@ const addSurveyHandlers = () => {
     $('.get-all-surveys').show()
     $('#message-box').hide()
     $('#message').html('')
+    $('#change-password-form').hide()
   })
   $('#create-survey-btn').click(() => {
     // $('#message').hide()
@@ -60,6 +61,7 @@ const addSurveyHandlers = () => {
     // $('.create-survey').removeClass('hidden')
     $('.get-my-surveys').hide()
     $('.get-all-surveys').hide()
+    $('#change-password-form').hide()
     $('#survey-form').show()
     $('#message').show()
     $('#message-box').hide()
@@ -71,6 +73,7 @@ const addSurveyHandlers = () => {
   })
   $('#my-survey-btn').click(() => {
     $('.create-survey').hide()
+    $('#change-password-form').hide()
     $('.get-all-surveys').hide()
     $('.get-my-surveys').show()
     $('#message-box').hide()
